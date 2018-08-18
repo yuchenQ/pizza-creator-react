@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Previewer from './Previewer/Previewer';
-import Form from './Form';
+import Form from './Form/Form';
 
 class App extends Component {
     constructor(props) {
