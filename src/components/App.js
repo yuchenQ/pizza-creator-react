@@ -74,7 +74,7 @@ class App extends Component {
                 {
                     toppingName: 'Pepperoni',
                     labelImage: '/assets/toppings/pepperoni.svg',
-                    contentImage: '/assets/toppings/pepperoni.svg',
+                    contentImage: '/assets/toppings/peppers.svg',
                     price: 0.99
                 },
                 {
@@ -86,7 +86,7 @@ class App extends Component {
                 {
                     toppingName: 'Sweetcorn',
                     labelImage: '/assets/toppings/sweetcorn.svg',
-                    contentImage: '/assets/toppings/sweetcorn.svg',
+                    contentImage: '/assets/toppings/peppers.svg',
                     price: 0.99
                 }
             ]
@@ -108,7 +108,7 @@ class App extends Component {
         return (
             <div className="pizza-creator-app">
                 <h1>Pizza Creator</h1>
-                <Previewer />
+                <Previewer selectedToppings={this.state.selectedToppings} />
                 <Form
                     details={this.state.details}
                     toppings={this.state.toppings}
