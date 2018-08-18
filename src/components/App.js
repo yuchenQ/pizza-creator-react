@@ -6,7 +6,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTopping: [],
+            selectedToppings: [],
             details: [
                 'name',
                 'email',
@@ -17,67 +17,90 @@ class App extends Component {
             ],
             toppings: [
                 {
-                    name: 'Anchovy',
+                    toppingName: 'Anchovy',
                     labelImage: '/assets/toppings/anchovy.svg',
-                    contentImage: '/assets/toppings/anchovies.svg'
+                    contentImage: '/assets/toppings/anchovies.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Bacon',
+                    toppingName: 'Bacon',
                     labelImage: '/assets/toppings/bacon.svg',
-                    contentImage: '/assets/toppings/bacons.svg'
+                    contentImage: '/assets/toppings/bacons.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Basil',
+                    toppingName: 'Basil',
                     labelImage: '/assets/toppings/basil.svg',
-                    contentImage: '/assets/toppings/basils.svg'
+                    contentImage: '/assets/toppings/basils.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Chili',
+                    toppingName: 'Chili',
                     labelImage: '/assets/toppings/chili.svg',
-                    contentImage: '/assets/toppings/chilies.svg'
+                    contentImage: '/assets/toppings/chilies.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Mozzarella',
+                    toppingName: 'Mozzarella',
                     labelImage: '/assets/toppings/mozzarella.svg',
-                    contentImage: '/assets/toppings/mozzarellas.svg'
+                    contentImage: '/assets/toppings/mozzarellas.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Mushroom',
+                    toppingName: 'Mushroom',
                     labelImage: '/assets/toppings/mushroom.svg',
-                    contentImage: '/assets/toppings/mushrooms.svg'
+                    contentImage: '/assets/toppings/mushrooms.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Olive',
+                    toppingName: 'Olive',
                     labelImage: '/assets/toppings/olive.svg',
-                    contentImage: '/assets/toppings/olives.svg'
+                    contentImage: '/assets/toppings/olives.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Onion',
+                    toppingName: 'Onion',
                     labelImage: '/assets/toppings/onion.svg',
-                    contentImage: '/assets/toppings/onions.svg'
+                    contentImage: '/assets/toppings/onions.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Pepper',
+                    toppingName: 'Pepper',
                     labelImage: '/assets/toppings/pepper.svg',
-                    contentImage: '/assets/toppings/peppers.svg'
+                    contentImage: '/assets/toppings/peppers.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Pepperoni',
+                    toppingName: 'Pepperoni',
                     labelImage: '/assets/toppings/pepperoni.svg',
-                    contentImage: '/assets/toppings/pepperoni.svg'
+                    contentImage: '/assets/toppings/pepperoni.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Peppers',
+                    toppingName: 'Peppers',
                     labelImage: '/assets/toppings/peppers.svg',
-                    contentImage: '/assets/toppings/peppers.svg'
+                    contentImage: '/assets/toppings/peppers.svg',
+                    price: 0.99
                 },
                 {
-                    name: 'Sweetcorn',
+                    toppingName: 'Sweetcorn',
                     labelImage: '/assets/toppings/sweetcorn.svg',
-                    contentImage: '/assets/toppings/sweetcorn.svg'
+                    contentImage: '/assets/toppings/sweetcorn.svg',
+                    price: 0.99
                 }
-            ],
+            ]
         };
+        this.onToppingBtnClick = this.onToppingBtnClick.bind(this);
+    }
+
+    onToppingBtnClick(toppingName) {
+        const selectedToppings = [...this.state.selectedToppings];
+        if (selectedToppings.includes(toppingName)) {
+            selectedToppings.splice(selectedToppings.indexOf(toppingName), 1);
+        } else {
+            selectedToppings.push(toppingName);
+        }
+        this.setState({ selectedToppings });
     }
 
     render() {
@@ -85,7 +108,12 @@ class App extends Component {
             <div className="pizza-creator-app">
                 <h1>Pizza Creator</h1>
                 <Previewer />
-                <Form toppings={this.state.toppings} details={this.state.details} />
+                <Form
+                    details={this.state.details}
+                    toppings={this.state.toppings}
+                    selectedToppings={this.state.selectedToppings}
+                    onToppingBtnClick={this.onToppingBtnClick}
+                />
             </div>
         );
     }

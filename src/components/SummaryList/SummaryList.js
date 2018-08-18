@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Summary extends Component {
+class SummaryList extends Component {
     render() {
         return (
             <div className="summary">
@@ -39,4 +39,4 @@ class Summary extends Component {
     }
 }
 
-export default Summary;
+export default SummaryList;

@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import DetailsContainer from './DetailsContainer';
-import ToppingsContainer from './ToppingsContainer';
-import Summary from './Summary';
+import DetailsContainer from './Details/DetailsContainer';
+import ToppingsForm from './ToppingsForm/ToppingsForm';
+import Summary from './SummaryList/SummaryList';
 
 class Form extends Component {
     render() {
         return (
             <form className="form">
                 <DetailsContainer details={this.props.details} />
-                <ToppingsContainer toppings={this.props.toppings} />
+                <ToppingsForm
+                    toppings={this.props.toppings}
+                    selectedToppings={this.props.selectedToppings}
+                    onToppingBtnClick={this.props.onToppingBtnClick}
+                />
                 <Summary />
             </form>
         );
