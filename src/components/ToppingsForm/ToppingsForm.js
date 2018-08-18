@@ -7,12 +7,11 @@ class ToppingsForm extends Component {
             <div>
                 <h2>Choose your toppings</h2>
                 <div className="toppings-container">
-                    {this.props.toppings.map(({ toppingName, labelImage }) => {
+                    {this.props.toppings.map((topping) => {
                         return (
                             <ToppingButton
-                                key={toppingName}
-                                toppingName={toppingName}
-                                labelImage={labelImage}
+                                key={topping.toppingName}
+                                topping={topping}
                                 selectedToppings={this.props.selectedToppings}
                                 onToppingBtnClick={this.props.onToppingBtnClick}
                             />

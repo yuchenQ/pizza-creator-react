@@ -3,20 +3,20 @@ import React from 'react';
 export default function ToppingButton(props) {
     return (
         <button
-            onClick={() => props.onToppingBtnClick(props.toppingName)}
-            // className={`topping ${props.selectedToppings.includes(
-            //     props.toppingName
-            // ) && 'active'}`}
-            className={
-                props.selectedToppings.includes(props.toppingName)
-                    ? 'topping active'
-                    : 'topping'
-            }
+            onClick={() => props.onToppingBtnClick(props.topping)}
+            className={`topping ${props.selectedToppings.includes(
+                props.topping
+            ) && 'active'}`}
+            // className={
+            //     props.selectedToppings.includes(props.toppingName)
+            //         ? 'topping active'
+            //         : 'topping'
+            // }
             type="button"
-            id={props.toppingName}
+            id={props.topping.toppingName}
         >
-            <img src={props.labelImage} alt={props.toppingName} />
-            <span>{props.toppingName}</span>
+            <img src={props.topping.labelImage} alt={props.topping.toppingName} />
+            <span>{props.topping.toppingName}</span>
         </button>
     );
 }

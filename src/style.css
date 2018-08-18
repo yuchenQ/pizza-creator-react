@@ -65,7 +65,7 @@ h1 {
 }
 
 h2 {
-    color: #6e7790;
+    color: black;
     font-size: 22px;
     font-weight: 300;
     margin: 2rem 0;
@@ -131,6 +131,12 @@ h2 {
     box-sizing: border-box;
     background: #e6e6e6;
     margin-right: 1rem;
+}
+
+.topping span {
+    text-transform: capitalize;
+    font-size: 14px;
+    text-align: center;
 }
 
 /* this is summary: */

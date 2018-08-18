@@ -6,6 +6,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            pizzaPrice: 9.99,
             selectedToppings: [],
             details: [
                 'name',
@@ -93,12 +94,12 @@ class App extends Component {
         this.onToppingBtnClick = this.onToppingBtnClick.bind(this);
     }
 
-    onToppingBtnClick(toppingName) {
+    onToppingBtnClick(topping) {
         const selectedToppings = [...this.state.selectedToppings];
-        if (selectedToppings.includes(toppingName)) {
-            selectedToppings.splice(selectedToppings.indexOf(toppingName), 1);
+        if (selectedToppings.includes(topping)) {
+            selectedToppings.splice(selectedToppings.indexOf(topping), 1);
         } else {
-            selectedToppings.push(toppingName);
+            selectedToppings.push(topping);
         }
         this.setState({ selectedToppings });
     }
@@ -113,6 +114,7 @@ class App extends Component {
                     toppings={this.state.toppings}
                     selectedToppings={this.state.selectedToppings}
                     onToppingBtnClick={this.onToppingBtnClick}
+                    pizzaPrice={this.state.pizzaPrice}
                 />
             </div>
         );

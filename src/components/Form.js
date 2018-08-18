@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DetailsContainer from './Details/DetailsContainer';
 import ToppingsForm from './ToppingsForm/ToppingsForm';
-import Summary from './SummaryList/SummaryList';
+import Summary from './Summary/Summary';
 
 class Form extends Component {
     render() {
@@ -13,7 +13,10 @@ class Form extends Component {
                     selectedToppings={this.props.selectedToppings}
                     onToppingBtnClick={this.props.onToppingBtnClick}
                 />
-                <Summary />
+                <Summary
+                    selectedToppings={this.props.selectedToppings}
+                    pizzaPrice={this.props.pizzaPrice}
+                />
             </form>
         );
     }
