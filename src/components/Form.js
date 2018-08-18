@@ -8,7 +8,7 @@ class Form extends Component {
         return (
             <form className="form">
                 <DetailsContainer details={this.props.details} />
-                <ToppingsContainer />
+                <ToppingsContainer toppings={this.props.toppings} />
                 <Summary />
             </form>
         );

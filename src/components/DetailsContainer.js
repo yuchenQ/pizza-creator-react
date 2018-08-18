@@ -8,7 +8,6 @@ class DetailsContainer extends Component {
 
     getDetail(props) {
         const details = [...props.details];
-        console.log(details);
         return details.map((name, index) => {
             return <Detail name={name} key={index} />;
         });
